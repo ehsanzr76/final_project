@@ -1,0 +1,272 @@
+/* Start careers_area css
+===================================================================*/
+.careers_area {
+	padding: 120px 0px;
+
+	.title {
+		font: 700 23px/24px $mon;
+		color: #1f1f1f;
+		
+		padding-bottom: 25px;
+	}
+
+	p {
+		font: 400 14px/27px $lato;
+		color: #666666;
+		
+	}
+
+	.careers-text {
+		padding-bottom: 30px;
+
+		.title {
+			padding-bottom: 20px;
+		}
+	}
+}
+
+.careers_accordian {
+	margin-bottom: 0px;
+
+	.panel {
+		.panel-heading {
+			h4 {
+				a {
+					font: 700 12px/20px $mon;
+					color: #fff;
+					
+					text-transform: uppercase;
+					background: #39ace2;
+					padding: 16px 40px 14px 20px;
+					transition: all 0.3s linear;
+					position: relative;
+
+					i {
+						float: left;
+						line-height: 20px;
+						display: inline-block;
+						position: absolute;
+						right: 20px;
+						top: 50%;
+						transform: translateY(-50%);
+					}
+
+					&.collapsed {
+						background: #eeeeee;
+						color: #565d60;
+					}
+				}
+			}
+		}
+
+		.accordian-img {
+			vertical-align: middle;
+			padding-left: 20px;
+		}
+
+		.text {
+			font: 400 14px/30px $open;
+			color: #646464;
+		}
+
+		.panel-body {
+			padding: 26px 16px 12px;
+		}
+	}
+}
+
+.careers_video {
+	margin-top: 75px;
+	margin-bottom: 70px;
+
+	.c_video {
+		position: relative;
+		z-index: 1;
+
+		&:before {
+			content: "";
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background: #070707;
+			opacity: 0.50;
+			position: absolute;
+			z-index: 0;
+		}
+
+		img {
+			max-width: 100%;
+		}
+	}
+
+	.cr_popup_video {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-top: -33px;
+		margin-right: -33px;
+		transition: all 0.3s linear;
+
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+
+	p {
+		max-width: 855px;
+		padding-top: 20px;
+	}
+}
+
+.careers_table {
+	.compare-table-are {
+		background: #00abc9;
+		padding-bottom: 10px;
+
+		table {
+			margin-bottom: 0px;
+		}
+
+		tr {
+			th {
+				font: 700 14px/24px $mon;
+				color: #fff;
+				
+				padding: 16px 30px;
+				border: 0px;
+			}
+
+			td {
+				font: 400 13px/27px $lato;
+				
+				color: #666666;
+				white-space: nowrap;
+				padding: 16px 30px;
+				border-top: 0px;
+				border-bottom: 1px solid #f6f6f6;
+				border-left: 1px solid #f6f6f6;
+
+				a {
+					color: #666666;
+					transition: all 0.4s linear;
+				}
+
+				&:last-child {
+					border-left: 0px;
+				}
+
+				&:hover {
+					a {
+						color: #00abc9;
+					}
+				}
+			}
+		}
+
+		.t_body {
+			background: #fbfafa;
+		}
+	}
+}
+
+/* End careers_area css
+===================================================================*/
+
+
+
+/* Start approach-area
+============================================================================================*/
+.approach-area {
+	padding: 125px 0px;
+}
+
+.approach-inner {
+	.approach-img {
+		position: relative;
+
+		img {
+			max-width: 100%;
+		}
+
+		.text {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			right: 70px;
+
+			h2 {
+				font: 700 35px/36px $mon;
+				color: #1c1c1c;
+
+				span {
+					color: #00abc9;
+				}
+			}
+
+			p {
+				font: 400 13px/48px $open;
+				color: #1c1c1c;
+				font-weight: 400;
+			}
+		}
+	}
+
+	.ap-p {
+		font-size: 15px;
+		color: #666666;
+		line-height: 27px;
+		
+		padding-top: 25px;
+	}
+
+	.approch-services {
+		margin-top: 30px;
+
+		.approch-service-item {
+			margin-top: 45px;
+
+			.media-left {
+				padding-left: 20px;
+			}
+
+			.ap-icon {
+				width: 75px;
+				height: 75px;
+				border-radius: 50%;
+				line-height: 68px;
+				border: 2px solid #07adca;
+				text-align: center;
+			}
+
+			.service-text {
+				vertical-align: middle;
+
+				h3 {
+					font: 700 17px/20px $mon;
+					color: #292929;
+					
+					padding-bottom: 5px;
+					transition: all 0.2s linear;
+				}
+
+				p {
+					font: 400 13px/24px $lato;
+					color: #515151;
+					
+				}
+			}
+
+			&:hover {
+				.service-text {
+					h3 {
+						color: #07adca;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* End approach-area
+============================================================================================*/

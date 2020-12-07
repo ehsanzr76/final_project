@@ -1,0 +1,62 @@
+.bootstrap-select.btn-group .dropdown-toggle .filter-option {
+    text-align: right;
+}
+
+.bootstrap-select.btn-group .dropdown-toggle .caret {
+    left: 12px;
+    right: auto
+}
+
+.side_menu {
+    ul.dropdown-menu {
+        left: auto;
+    }
+}
+
+
+.social-share {
+
+    .fa.fa-comments {
+        &:before {
+            content: none;
+        }
+
+        &:after {
+            content: "\f086";
+        }
+    }
+
+    .fa.fa-heart {
+        &:before {
+            content: none;
+        }
+
+        &:after {
+            content: "\f004";
+        }
+    }
+
+    .fa.fa-heart-o {
+        &:before {
+            content: none;
+        }
+
+        &:after {
+            content: "\f08a";
+        }
+    }
+}
+
+.bootstrap-select.btn-group.show-tick .dropdown-menu li a span.text {
+    margin-left: 34px;
+    margin-right: auto
+}
+
+.navbar-default {
+    .navbar-toggle {
+        border-color: #ddd;
+        .icon-bar {
+            background-color: #888;
+        }
+    }
+}

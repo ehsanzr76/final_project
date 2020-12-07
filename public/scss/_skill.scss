@@ -1,0 +1,55 @@
+/* Skill Area css
+============================================================================================ */
+.skill_area {
+    background: #252525;
+    padding: 100px 0px;
+}
+
+.skill_item_area {
+    .skill_item {
+        position: relative;
+        margin-bottom: 35px;
+
+        h5 {
+            font-size: 14px;
+            color: #fff;
+            font-family: $mon;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .progress {
+            height: 8px;
+            background: #515151;
+            border-radius: 4px;
+            max-width: 460px;
+            margin-bottom: 0px;
+            overflow: visible;
+
+            .progress-bar {
+                height: 8px;
+                border-radius: 4px;
+                background: #0081ff;
+
+                .progress_parcent {
+                    position: absolute;
+                    left: 30px;
+                    bottom: -4px;
+                    font-size: 14px;
+                    color: #fff;
+                    font-family: $mon;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 0px;
+        }
+    }
+}
+
+/* End Skill Area css
+============================================================================================ */
