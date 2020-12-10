@@ -164,6 +164,8 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         \ehsan\User\providers\UserServiceProvider::class,
+        \ehsan\Panel\providers\DashboardServiceProvider::class,
+
 
         /*
          * Package Service Providers...

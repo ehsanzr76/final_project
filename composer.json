@@ -37,7 +37,9 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/",
-            "ehsan\\User\\": "modules/ehsan/User/"
+            "ehsan\\User\\": "modules/ehsan/User/",
+            "ehsan\\Panel\\": "modules/ehsan/Panel/"
+
         },
         "classmap": [
             "database/seeds",
