@@ -165,6 +165,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         \ehsan\User\providers\UserServiceProvider::class,
         \ehsan\Panel\providers\DashboardServiceProvider::class,
+        \ehsan\Category\providers\CategoryServiceProvider::class,
+
 
 
         /*

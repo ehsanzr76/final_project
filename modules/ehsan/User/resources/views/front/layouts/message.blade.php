@@ -16,7 +16,7 @@
 
 
 @if (session('success'))
-<div class="alert alert-success" style="text-align: center;font-size: 25px">
+<div class="alert alert-success" style="text-align: center;font-size: 17px">
     {{session('success')}}
 </div>
 @endif

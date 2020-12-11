@@ -39,6 +39,7 @@ class RegistrationTest extends TestCase
 
 
 
+
     public function test_user_have_to_verify_account()
     {
         $this->register_user();
@@ -47,6 +48,7 @@ class RegistrationTest extends TestCase
     }
 
 
+    
 
     public function test_user_can_to_verify_account()
     {

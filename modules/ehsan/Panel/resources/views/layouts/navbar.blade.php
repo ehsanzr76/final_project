@@ -73,7 +73,7 @@
               <li><a href="#"><i data-feather="mail"></i>                                    صندوق ورودی</a></li>
               <li><a href="#"><i data-feather="lock"></i>                                    قفل صفحه</a></li>
               <li><a href="#"><i data-feather="settings"></i>                                    تنظیمات</a></li>
-              <li><a href="#"><i data-feather="log-out"></i>                                    خروج</a></li>
+              <li><form method="POST" action="logout">@csrf<button class="btn btn-primary" style="text-align: center">خروج</button></form></li>
             </ul>
           </li>
         </ul>
