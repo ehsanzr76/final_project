@@ -1,10 +1,10 @@
 <?php
 
-namespace ehsan\Category\Providers;
+namespace ehsan\RolePermission\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class CategoryServiceProvider extends ServiceProvider
+class RolePermissionServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
@@ -13,9 +13,10 @@ class CategoryServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->loadRoutesFrom(__DIR__ . '/../routes/category_route.php');
-        $this->loadViewsFrom(__DIR__ . '/../resources/views/', 'Category');
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations/');
+        $this->loadRoutesFrom(__DIR__ . '/../routes/RolePermission_route.php');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views' , 'RolePermission');
+        $this->loadJsonTranslationsFrom(__DIR__ . '/../resources/Lang');
     }
 
     /**
@@ -25,7 +26,6 @@ class CategoryServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
-        
+        //
     }
 }

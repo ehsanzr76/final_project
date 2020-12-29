@@ -16,8 +16,9 @@
     <!--================Header Logo Area =================-->
 
     @include('user::front.layouts.navbar')
-    @include('user::front.layouts.message')
-
+    <div class="col-lg-4">
+        @include('user::front.layouts.message')
+    </div>
 
 
     <!--================End Shop Header Area =================-->

@@ -12,19 +12,15 @@ class DashboardServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->loadRoutesFrom( __DIR__ . '/../routes/panel_route.php');
+        $this->loadViewsFrom( __DIR__ . '/../resources/views' , 'panel');
     }
 
-    /**
-     * Bootstrap services.
-     *
-     * @return void
-     */
+
     public function boot()
     {
 
-        $this->loadRoutesFrom( __DIR__ . '/../routes/panel_route.php');
-        $this->loadViewsFrom( __DIR__ . '/../resources/views' , 'panel');
+     
         
     }
 }

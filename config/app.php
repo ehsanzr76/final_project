@@ -1,5 +1,6 @@
 <?php
 
+use ehsan\RolePermission\Providers\RolePermissionServiceProvider;
 use ehsan\User\providers\UserServiceProvider;
 
 return [
@@ -166,6 +167,12 @@ return [
         \ehsan\User\providers\UserServiceProvider::class,
         \ehsan\Panel\providers\DashboardServiceProvider::class,
         \ehsan\Category\providers\CategoryServiceProvider::class,
+        \ehsan\RolePermission\providers\RolePermissionServiceProvider::class,
+        \ehsan\Business\providers\BusinessServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
+
+
+
 
 
 

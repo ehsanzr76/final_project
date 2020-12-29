@@ -11,6 +11,10 @@ class Category extends Model
     protected $fillable = ['title', 'slug', 'parent_id'];
 
 
+   
+
+   
+
     public function getparentAttribute()
     {
         return (is_null($this->parent_id)) ? 'ندارد' : $this->parentCategory->title;

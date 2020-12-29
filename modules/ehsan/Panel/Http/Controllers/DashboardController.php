@@ -11,7 +11,7 @@ class DashboardController extends Controller
     public function index()
     {
         $breadcrumb = 'صفحه اصلی';
-        $pagetitle = 'داشبورد';
+        $pagetitle = 'پنل مدیریت';
         return view('panel::index', compact('pagetitle' , 'breadcrumb'));
     }
 }

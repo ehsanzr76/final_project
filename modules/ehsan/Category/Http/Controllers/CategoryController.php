@@ -14,10 +14,10 @@ class CategoryController extends Controller
 
     public function index()
     {
-        $category = Category::OrderBy('id', 'DESC')->paginate(5);
+        $categories = Category::OrderBy('id', 'DESC')->paginate(5);
         $pagetitle = 'دسته بندی ها';
         $breadcrumb = 'دسته بندی ها';
-        return view('Category::index', compact('pagetitle', 'breadcrumb', 'category'));
+        return view('Category::index', compact('pagetitle', 'breadcrumb', 'categories'));
     }
 
 
@@ -25,13 +25,13 @@ class CategoryController extends Controller
 
 
 
-    public function create()
-    {
-        $pagetitle = 'ایجاد دسته بندی';
-        $breadcrumb = 'دسته بندی ها / ایجاد دسته بندی';
-        $categories = Category::all();
-        return view('Category::create', compact('pagetitle', 'categories', 'breadcrumb'));
-    }
+    // public function create()
+    // {
+    //     $pagetitle = 'ایجاد دسته بندی';
+    //     $breadcrumb = 'دسته بندی ها / ایجاد دسته بندی';
+    //     $categories = Category::all();
+    //     return view('Category::create', compact('pagetitle', 'categories', 'breadcrumb'));
+    // }
 
 
 
@@ -54,7 +54,7 @@ class CategoryController extends Controller
             return redirect(route('categories.create'))->with('warning', $msg);
         }
 
-        $msg = "دسته جدید با موفقیت ایجاد شد.";
+        $msg = "دسته جدید ایجاد شد.";
         return redirect(route('categories'))->with('success', $msg);
     }
 

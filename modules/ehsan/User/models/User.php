@@ -3,22 +3,24 @@
 namespace ehsan\User\models;
 
 use App\Notifications\VerifyEmail;
+use ehsan\Permission\Services\Traits\HasPermission;
 use ehsan\User\Notifications\VerifyMail;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Spatie\Permission\Traits\HasPermissions as TraitsHasPermissions;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use Notifiable;
-
+    use Notifiable , HasRoles;
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password' , 'mobile'
+        'name', 'email', 'password', 'mobile'
     ];
 
     /**

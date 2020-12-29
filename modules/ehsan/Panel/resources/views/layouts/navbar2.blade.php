@@ -3,11 +3,10 @@
       <div class="row">
         <div class="col">
           <div class="page-header-left">
-            <h3>پیش فرض</h3>
+            <h3>پیش خوان</h3>
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="{{route('Dashboard')}}"><i data-feather="home"></i></a></li>
               <li class="breadcrumb-item">داشبورد</li>
-              <li class="breadcrumb-item active">پیش فرض</li>
               <li class="breadcrumb-item active">{{$breadcrumb}}</li>
 
             </ol>
