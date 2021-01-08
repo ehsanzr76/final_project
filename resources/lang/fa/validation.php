@@ -11,7 +11,7 @@ return [
     | as the size rules. Feel free to tweak each of these messages here.
     |
     */
-
+    'recaptcha' => ' :attribute تصویر امنیتی باید پر شود',
     'accepted'             => ':attribute باید پذیرفته شده باشد.',
     'active_url'           => 'آدرس :attribute معتبر نیست.',
     'after'                => ':attribute باید تاریخی بعد از :date باشد.',
@@ -129,8 +129,7 @@ return [
     |
     */
 
-    'custom' => [
-    ],
+    'custom' => [],
 
     /*
     |--------------------------------------------------------------------------
@@ -176,6 +175,12 @@ return [
         'size'                  => 'اندازه',
         'terms'                 => 'شرایط',
         'province'              => 'استان',
-        'verify_code'           => 'تایید حساب کاربری'
+        'verify_code'           => 'تایید حساب کاربری',
+        'title'                 => 'عنوان',
+        'startDate'             => 'تاریخ شروع',
+        'endDate'               => 'تاریخ پایان',
+        'category_id'           => 'دسته بندی',
+        'body'                  => 'توضیحات',
+
     ],
 ];

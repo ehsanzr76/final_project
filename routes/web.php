@@ -30,16 +30,10 @@ Route::get('/test', function () {
 
 
 
-Route::get('/test1', function () {
-    Permission::create([
+// Route::get('/test1', function () {
+//     Permission::create([
 
-        'name' => 'manage permissions',
-        'name' => 'manage categories',
-
-
-
-
-    ]);
-    auth()->user()->givePermissionTo('manage permissions');
-    // return auth()->user()->permissions;
-});
+//         'name' => 'manage permissions',
+//     ]);
+//     auth()->user()->givePermissionTo('manage permissions');
+// });

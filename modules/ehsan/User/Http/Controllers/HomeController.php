@@ -12,7 +12,7 @@ class HomeController extends Controller
      
     public function index()
     {
-        $pagetitle = 'سایت کسب و کار های مجازی و غیر مجازی';
+        $pagetitle = 'نیترو بیزینس';
         return view('user::front.index' , ['pagetitle' => $pagetitle]);
     }
 

@@ -9,7 +9,7 @@
 
                 <div class="card-body">
                     {{ __('Please confirm your password before continuing.') }}
-
+                    @include('user::front.layouts.message')
                     <form method="POST" action="{{ route('password.confirm') }}">
                         @csrf
 

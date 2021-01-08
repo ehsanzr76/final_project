@@ -1,29 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
 @include('user::front.layouts.header')
 
 <body class="rtl">
-    <!-- pre-loader-->
-    {{-- <div id="pre-loader">
-            <div id="preload_inner">
-                <div class="spinner">
-                    <div class="double-bounce1"></div>
-                    <div class="double-bounce2"></div>
-                </div>
-            </div>
-        </div> --}}
-    <!-- pre-loader-->
-    <!--================Header Logo Area =================-->
-
     @include('user::front.layouts.navbar')
-    <div class="col-lg-4">
-        @include('user::front.layouts.message')
-    </div>
-
-
-    <!--================End Shop Header Area =================-->
-
-    <!--================Shop Slider Area =================-->
+    @include('user::front.layouts.message')
     <section class="shop_slider_area">
         <div class="shop_slider_inner">
             <div id="shop_slider" class="rev_slider" data-version="5.3.1.6">
@@ -142,7 +121,6 @@
         </div>
         @include('user::front.layouts.category')
     </section>
-
     <!--================End Shop Slider Area =================-->
 
     <!--================Promotion Area =================-->

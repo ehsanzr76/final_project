@@ -1,4 +1,5 @@
 @include('panel::layouts.header')
+
 <body main-theme-layout="rtl">
   <!-- Loader starts-->
   {{-- <div class="loader-wrapper"> ////// لودر
@@ -17,12 +18,9 @@
         <div class="container-fluid">
           <div class="row">
 
-            
 
 
- @yield('content')
-
-       
+            @yield('content')
 
 
 
@@ -30,11 +28,8 @@
 
 
 
-
-
-
-    
           </div>
         </div>
       </div>
-     @include('panel::layouts.footer')
+      @include('panel::layouts.footer')
+    </div>

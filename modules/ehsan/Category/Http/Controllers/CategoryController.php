@@ -54,7 +54,7 @@ class CategoryController extends Controller
             return redirect(route('categories.create'))->with('warning', $msg);
         }
 
-        $msg = "دسته جدید ایجاد شد.";
+        $msg = "دسته با موفقیت ایجاد شد.";
         return redirect(route('categories'))->with('success', $msg);
     }
 

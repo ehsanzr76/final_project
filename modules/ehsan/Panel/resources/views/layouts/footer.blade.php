@@ -50,5 +50,4 @@
 <script src="{{url('/assets/js/theme-customizer/customizer.js')}}"></script>
 <!-- Plugin used-->
 </body>
-
 </html>

@@ -6,6 +6,7 @@
     <!-- Loader starts-->
     <!-- Loader ends-->
     <!-- page-wrapper Start-->
+    @include('user::front.layouts.message')
     <div class="page-wrapper">
         <div class="container-fluid">
             <div class="row">
@@ -13,8 +14,11 @@
                     <div class="auth-bg">
                         <div class="authentication-box">
                             <div class="card mt-4 p-4">
+
                                 <h3 class="text-center" style="color: rgb(136, 116, 116)">فرم ورود به سایت</h3>
+
                                 <br>
+
                                 <form class="theme-form" method="POST" action="{{route('login')}}">
                                     @csrf
                                     <div class="form-group">
@@ -45,12 +49,23 @@
                                     </span>
                                     @enderror
 
+                                  
                                     <label class="ui-checkbox">
                                         مرا به خاطر بسپار
                                         <input type="checkbox" name="remember" id="remember"
                                             {{ old('remember') ? 'checked' : '' }}>
                                         <span class="checkmark"></span>
                                     </label>
+
+                                    
+                                    <div class="form-group">
+                                        <label for="recaptcha">تصویر امنیتی</label>
+                                        {!! htmlFormSnippet() !!}
+                                    </div>
+
+
+
+                                 
 
                                     <div class="form-row">
                                         <div class="col-sm-4">
@@ -72,12 +87,16 @@
                                                     class="fa fa-github"></i></button>
                                         </div>
                                     </div> --}}
+                                    <div style="text-align: left">
+                                        <label class="ui-checkbox">
+                                            <a href="{{ route('register') }}">ثبت نام</a>
+                                            <br>
+                                            <a href="{{ url('password/reset') }}">رمز عبور را فراموش کرده اید؟ کلیک
+                                                کنید</a>
 
-                                    <label class="ui-checkbox">
-                                        <a href="{{ url('password/reset') }}">رمز عبور را فراموش کرده اید؟ کلیک کنید</a>
-                                        <br>
-                                        <a href="{{ route('register') }}">ثبت نام</a>
-                                    </label>
+
+                                        </label>
+                                    </div>
                             </div>
                             </form>
 
@@ -87,32 +106,7 @@
                 </div>
                 <div class="col-lg-4">
                     <section class="shop_slider_area">
-                        <div class="famouse_category">
-                            <div class="cate_title">
-                                <h4><i class="fa fa-bars" aria-hidden="true"></i> دسته بندی های فروشگاه</h4>
-                            </div>
-                            <ul>
-                                <li><a href="#"><i class="fa fa-angle-left" aria-hidden="true"></i>صوتی و تصویری</a>
-                                </li>
-                                <li><a href="#"><i class="fa fa-angle-left" aria-hidden="true"></i>صوتی و تصویری</a>
-                                </li>
-                                <li><a href="#"><i class="fa fa-angle-left" aria-hidden="true"></i>الکترونیک خودرو</a>
-                                </li>
-                                <li><a href="#"><i class="fa fa-angle-left" aria-hidden="true"></i>بازی های ویدئویی و
-                                        کنسول ها</a></li>
-                                <li><a href="#"><i class="fa fa-angle-left" aria-hidden="true"></i>لپ تاپ و کامپیوتر</a>
-                                </li>
-                                <li><a href="#"><i class="fa fa-angle-left" aria-hidden="true"></i>دوربین</a></li>
-                                <li><a href="#"><i class="fa fa-angle-left" aria-hidden="true"></i>موبایل و تبلت</a>
-                                </li>
-                                <li><a href="#"><i class="fa fa-angle-left" aria-hidden="true"></i>بازی های ویدئویی و
-                                        کنسول ها</a></li>
-                                <li><a href="#"><i class="fa fa-angle-left" aria-hidden="true"></i>صوتی و تصویری</a>
-                                </li>
-
-
-                            </ul>
-                        </div>
+                        @include('user::front.layouts.category')
                     </section>
                 </div>
             </div>

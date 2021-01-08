@@ -57,6 +57,7 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'mobile' => ['nullable', 'string', 'min:9', 'max:14', 'unique:users' , new ValidMobile()],
             'password' => ['required', 'string', 'min:8', 'confirmed' , new ValidPassword()],
+            recaptchaFieldName() => recaptchaRuleName()
         ]);
     }
 

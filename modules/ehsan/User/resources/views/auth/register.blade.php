@@ -6,6 +6,7 @@
     <!-- Loader starts-->
     <!-- Loader ends-->
     <!-- page-wrapper Start-->
+    @include('user::front.layouts.message')
     <div class="page-wrapper">
         <div class="container-fluid">
             <div class="row">
@@ -99,13 +100,19 @@
                                             name="password_confirmation" required autocomplete="new-password">
                                     </div>
 
+
+                                    <div class="form-group">
+                                        <label for="recaptcha">تصویر امنیتی</label>
+                                        {!! htmlFormSnippet() !!}
+                                    </div>
+
                                     <label class="col-form-label" style="color: rgb(136, 116, 116)">رمز عبور باید حداقل
                                         8 کاراکتر و ترکیبی از حروف بزرگ ، حروف کوچک ، اعداد و کاراکتر های غیر الفبا
                                         مانند ()*/$&#%@! باشد
                                     </label>
 
                                     <br>
-                                    <br>
+
 
                                     <div class="form-row">
                                         <div class="col-sm-4">
@@ -123,7 +130,7 @@
 
 
                                     <div class="form-divider"></div>
-                                    <div class="social mt-3">
+                                    {{-- <div class="social mt-3">
                                         <div class="form-group btn-showcase d-flex">
                                             <button class="btn social-btn btn-fb d-inline-block"> <i
                                                     class="fa fa-facebook"></i></button>
@@ -134,41 +141,17 @@
                                             <button class="btn social-btn btn-github d-inline-block"><i
                                                     class="fa fa-github"></i></button>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </form>
                             </div>
                         </div>
                     </div>
 
                 </div>
+                <br><br>
                 <div class="col-lg-4">
                     <section class="shop_slider_area">
-                        <div class="famouse_category">
-                            <div class="cate_title">
-                                <h4><i class="fa fa-bars" aria-hidden="true"></i> دسته بندی های فروشگاه</h4>
-                            </div>
-                            <ul>
-                                <li><a href="#"><i class="fa fa-angle-left" aria-hidden="true"></i>صوتی و تصویری</a>
-                                </li>
-                                <li><a href="#"><i class="fa fa-angle-left" aria-hidden="true"></i>صوتی و تصویری</a>
-                                </li>
-                                <li><a href="#"><i class="fa fa-angle-left" aria-hidden="true"></i>الکترونیک خودرو</a>
-                                </li>
-                                <li><a href="#"><i class="fa fa-angle-left" aria-hidden="true"></i>بازی های ویدئویی و
-                                        کنسول ها</a></li>
-                                <li><a href="#"><i class="fa fa-angle-left" aria-hidden="true"></i>لپ تاپ و کامپیوتر</a>
-                                </li>
-                                <li><a href="#"><i class="fa fa-angle-left" aria-hidden="true"></i>دوربین</a></li>
-                                <li><a href="#"><i class="fa fa-angle-left" aria-hidden="true"></i>موبایل و تبلت</a>
-                                </li>
-                                <li><a href="#"><i class="fa fa-angle-left" aria-hidden="true"></i>بازی های ویدئویی و
-                                        کنسول ها</a></li>
-                                <li><a href="#"><i class="fa fa-angle-left" aria-hidden="true"></i>صوتی و تصویری</a>
-                                </li>
-
-
-                            </ul>
-                        </div>
+                        @include('user::front.layouts.category')
                     </section>
                 </div>
             </div>

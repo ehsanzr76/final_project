@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::group(['namespace' => 'ehsan\RolePermission\Http\Controllers', 'prefix' => '/Dashboard',  'middleware' => ['web', 'auth', 'verified', 'permission:manage permissions']], function ($router) {
+Route::group(['namespace' => 'ehsan\RolePermission\Http\Controllers', 'prefix' => '/Dashboard',  'middleware' => ['web', 'auth', 'verified']], function ($router) {
 
     route::get('/RolePermissions', 'RolePermissionController@index')->name('RolePermissions');
     route::post('/RolePermissions/store', 'RolePermissionController@store')->name('RolePermissions.store');

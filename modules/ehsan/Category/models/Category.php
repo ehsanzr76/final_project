@@ -2,6 +2,7 @@
 
 namespace ehsan\Category\models;
 
+use ehsan\Business\models\Business;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Database\Eloquent\Model;
 
@@ -29,6 +30,12 @@ class Category extends Model
     public function SubCategories()
     {
         return $this->hasMany(Category::class , 'parent_id');
+    }
+
+
+    public function businesses()
+    {
+        return $this->belongsTo(Business::class);
     }
 
 }

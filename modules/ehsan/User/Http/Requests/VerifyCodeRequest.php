@@ -24,7 +24,8 @@ class VerifyCodeRequest extends FormRequest
     public function rules()
     {
         return [
-            'verify_code' => 'required|numeric|min:6'
+            'verify_code' => 'required|numeric|min:6',
+            recaptchaFieldName() => recaptchaRuleName()
         ];
     }
 }
