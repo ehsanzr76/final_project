@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['namespace' => 'ehsan\Business\Http\Controllers' , 'prefix' => '/Dashboard' , 'middleware' => ['web' , 'auth' , 'verified']], function ($router) {
 
     route::get('/Business' , 'BusinessController@index')->name('Business');
+    route::get('/Business/status/{business}', 'BusinessController@updatestatus')->name('business.status');
     
 });
 
@@ -19,6 +20,7 @@ Route::group(['namespace' => 'ehsan\Business\Http\Controllers' , 'middleware' =>
 
     route::get('/Business/create' , 'BusinessController@CreateFrontBusiness')->name('business.create');
     route::post('/Business/store' , 'BusinessController@StoreFrontBusiness')->name('business.store');
+
 
     
 });

@@ -3,11 +3,12 @@
 namespace ehsan\Business\models;
 
 use ehsan\Category\models\Category;
+use ehsan\Media\models\Media;
 use Illuminate\Database\Eloquent\Model;
 
 class Business extends Model
 {
-    protected $fillable = ['title', 'body', 'category_id' , 'mobile' , 'BusinessNumber' , 'address'];
+    protected $fillable = ['title', 'body', 'category_id' , 'mobile' , 'BusinessNumber' , 'address' , 'media_id'];
 
 
 
@@ -15,7 +16,20 @@ class Business extends Model
 
     public function category()
     {
-        return $this->hasOne(Category::class);
+        return $this->belongsTo(Category::class);
+    }
+
+    
+    public function getThumbAttribute()
+    {
+        return '/storage/' . $this->image->files[300];
+    }
+
+
+
+    public function image()
+    {
+        return $this->belongsTo(Media::class, 'media_id');
     }
 
 }

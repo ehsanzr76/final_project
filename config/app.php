@@ -169,8 +169,10 @@ return [
         \ehsan\Category\providers\CategoryServiceProvider::class,
         \ehsan\RolePermission\providers\RolePermissionServiceProvider::class,
         \ehsan\Business\providers\BusinessServiceProvider::class,
+        \ehsan\Media\providers\MediaServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
         Biscolab\ReCaptcha\ReCaptchaServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
 
 
 
@@ -242,6 +244,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'ReCaptcha' => Biscolab\ReCaptcha\Facades\ReCaptcha::class,
+        'Image' => Intervention\Image\Facades\Image::class,
 
     ],
 

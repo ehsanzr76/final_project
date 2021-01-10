@@ -24,7 +24,8 @@ class BusinessController extends Controller
     {
         $pagetitle = 'مشاهده کسب و کار ها';
         $breadcrumb = 'مشاهده کسب و کار ها';
-        return view('Business::index', compact('pagetitle', 'breadcrumb'));
+        $business = Business::OrderBy('id' , 'DESC')->paginate(8);
+        return view('Business::index', compact('pagetitle', 'breadcrumb' , 'business'));
     }
 
 
@@ -42,6 +43,8 @@ class BusinessController extends Controller
 
     public function StoreFrontBusiness(BusinessRequest $request)
     {
+        $request->request->add(['media_id' => MediaService::Upload($request->file('image'))->id]);
+
         $business = new Business([
             'title' => $request->title,
             'body' => $request->body,
@@ -49,21 +52,21 @@ class BusinessController extends Controller
             'address' => $request->address,
             'BusinessNumber' => $request->BusinessNumber,
             'category_id' => $request->category_id,
-            'banner_id' => $request->banner_id
-
+            'media_id' => $request->media_id
         ]);
-        $request->request->add(['banner_id' => MediaService::Upload($request->file('image'))->id]);
 
-        try {
-            $business->save();
-        } catch (Exception $exc) {
-            switch ($exc->getCode()) {
-                case 23000:
-                    $msg = "خطایی رخ داده است";
-                    break;
-            }
-            return redirect(route('business.create'))->with('warning', $msg);
-        }
+
+
+        // try {
+        $business->save();
+        // } catch (Exception $exc) {
+        //     switch ($exc->getCode()) {
+        //         case 23000:
+        //             $msg = "خطایی رخ داده است";
+        //             break;
+        //     }
+        //     return redirect(route('business.create'))->with('warning', $msg);
+        // }
 
         $msg = "درخواست شما با موفقیت ارسال شد. پس از تایید اطلاعات کسب و کار شما در سایت قرار میگیرد.";
         return redirect(route('business.create'))->with('success', $msg);
@@ -111,4 +114,19 @@ class BusinessController extends Controller
     {
         //
     }
+
+
+    public function updatestatus(Business $business)
+    {
+        if ($business->status == 1) {
+            $business->status = 0;
+        } else {
+            $business->status = 1;
+        }
+
+        $business->save();
+        $msg = "بروزرسانی با موفقیت انجام شد";
+        return redirect(route('Business'))->with('success', $msg);
+    }
+    
 }

@@ -37,7 +37,6 @@
           class="fa fa-angle-right pull-right"></i></a>
       <ul class="sidebar-submenu">
         <li><a href="{{route('Business')}}"><i class="fa fa-circle"></i>مشاهده</a></li>
-        <li><a href="{{route('categories')}}"><i class="fa fa-circle"></i>ایجاد کسب و کار</a></li>
 
       </ul>
 

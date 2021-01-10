@@ -14,9 +14,11 @@
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.3",
+        "intervention/image": "^2.5",
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.4",
+        "morilog/jalali": "3.*",
         "spatie/laravel-permission": "^3.18"
     },
     "require-dev": {
@@ -43,7 +45,9 @@
             "ehsan\\Panel\\": "modules/ehsan/Panel/",
             "ehsan\\Category\\": "modules/ehsan/Category/",
             "ehsan\\RolePermission\\": "modules/ehsan/RolePermission/",
-            "ehsan\\Business\\": "modules/ehsan/Business/"
+            "ehsan\\Business\\": "modules/ehsan/Business/",
+            "ehsan\\Media\\": "modules/ehsan/Media/"
+
 
 
 

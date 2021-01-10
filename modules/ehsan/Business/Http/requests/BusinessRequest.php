@@ -32,6 +32,7 @@ class BusinessRequest extends FormRequest
             'BusinessNumber' =>'required|max:190|unique:Businesses',
             'mobile' => ['string', 'min:9', 'max:14', 'unique:users' , new ValidMobile()],
             'category_id' => 'required|exists:categories,id',
+            'image' => 'required|mimes:jpg,png,jpeg',
             recaptchaFieldName() => recaptchaRuleName()
 
             //

@@ -16,11 +16,13 @@
                             <div class="card mt-4 p-4">
                                 <h3 class="text-center" style="color: rgb(136, 116, 116)">فرم ثبت کسب و کار</h3>
                                 <br>
-      
-                                <form class="theme-form" method="POST" action="{{route('business.store')}}">
+
+                                <form class="theme-form" method="POST" action="{{route('business.store')}}"
+                                    enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-group">
-                                        <label class="col-form-label" style="color: rgb(136, 116, 116)">عنوان کسب و کار *</label>
+                                        <label class="col-form-label" style="color: rgb(136, 116, 116)">عنوان کسب و کار
+                                            *</label>
                                         <input class="form-control  @error('title') is-invalid @enderror" type="text"
                                             placeholder="عنوان کسب و کار خود را وارد کنید" name="title"
                                             value="{{ old('title') }}" required autocomplete="title" autofocus>
@@ -32,7 +34,8 @@
                                         @enderror
                                         <br>
                                         <div class="form-group">
-                                            <label class="col-form-label" style="color: rgb(136, 116, 116)">شماره موبایل *</label>
+                                            <label class="col-form-label" style="color: rgb(136, 116, 116)">شماره موبایل
+                                                *</label>
                                             <input class="form-control @error('mobile') is-invalid @enderror"
                                                 type="text" placeholder="شماره موبایل خود را وارد کنید" name="mobile"
                                                 value="{{ old('mobile') }}" required autocomplete="mobile" autofocus>
@@ -89,10 +92,12 @@
                                     </select><br>
 
                                     <div class="form-group">
-                                        <label class="col-form-label" style="color: rgb(136, 116, 116)">شماره پروانه کسب *</label>
+                                        <label class="col-form-label" style="color: rgb(136, 116, 116)">شماره پروانه کسب
+                                            *</label>
                                         <input class="form-control @error('BusinessNumber') is-invalid @enderror"
-                                            type="text" placeholder="شماره پروانه خود را وارد کنید" name="BusinessNumber"
-                                            value="{{ old('BusinessNumber') }}" required autocomplete="BusinessNumber" autofocus>
+                                            type="text" placeholder="شماره پروانه خود را وارد کنید"
+                                            name="BusinessNumber" value="{{ old('BusinessNumber') }}" required
+                                            autocomplete="BusinessNumber" autofocus>
 
                                         @error('BusinessNumber')
                                         <span class="invalid-feedback" role="alert">
@@ -101,6 +106,14 @@
                                         @enderror
 
                                     </div>
+
+
+                                    <div class="form-group draggable ui-draggable ui-draggable-handle">
+                                        <label for="input-file-1">آپلود عکس</label>
+                                        <input id="input-file-1" type="file" name="image">
+                                    </div>
+
+
 
 
                                     <div class="form-group">
@@ -112,20 +125,20 @@
 
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">آدرس *</label>
-                                        <textarea class="form-control @error('address') is-invalid @enderror" type="text"
-                                            name="address" required autocomplete="address"></textarea>
+                                        <textarea class="form-control @error('address') is-invalid @enderror"
+                                            type="text" name="address" required autocomplete="address"></textarea>
                                     </div>
 
 
 
-                                    
+
 
                                     <div class="form-group">
                                         <label for="recaptcha">تصویر امنیتی</label>
                                         {!! htmlFormSnippet() !!}
                                     </div>
 
-                                    
+
 
 
 

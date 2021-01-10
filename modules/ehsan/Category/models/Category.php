@@ -35,7 +35,7 @@ class Category extends Model
 
     public function businesses()
     {
-        return $this->belongsTo(Business::class);
+        return $this->hasOne(Business::class);
     }
 
 }

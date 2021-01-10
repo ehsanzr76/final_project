@@ -17,14 +17,16 @@ class CreateBusinessesTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('body');
+            $table->bigInteger('media_id')->unsigned()->nullable();
             $table->string('mobile');
             $table->string('BusinessNumber');
             $table->text('address');
             $table->integer('hit')->unsigned()->nullable();
-            $table->enum('status' , ['active' , 'deactive'])->nullable();
+            $table->boolean('status')->default(0);
             $table->bigInteger('category_id')->unsigned();
 
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('CASCADE');
+            $table->foreign('media_id')->references('id')->on('media')->onDelete('CASCADE');
             $table->timestamps();
         });
     }
