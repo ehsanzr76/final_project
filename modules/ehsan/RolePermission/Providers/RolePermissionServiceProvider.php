@@ -4,6 +4,9 @@ namespace ehsan\RolePermission\Providers;
 
 use DatabaseSeeder;
 use ehsan\RolePermission\database\seeds\RolePermissionSeeder;
+use ehsan\RolePermission\models\Permission;
+use ehsan\User\models\User;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 
 class RolePermissionServiceProvider extends ServiceProvider
@@ -20,6 +23,11 @@ class RolePermissionServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__ . '/../resources/views' , 'RolePermission');
         $this->loadJsonTranslationsFrom(__DIR__ . '/../resources/Lang');
         DatabaseSeeder::$seeders[] = RolePermissionSeeder::class;
+
+        
+        Gate::before(function ($user) {
+           return $user->hasPermissionTo(Permission::PERMISSION_SUPER_ADMIN) ? true : null;
+        });
     }
 
     /**

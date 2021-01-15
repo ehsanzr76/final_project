@@ -14,6 +14,7 @@ class CategoryController extends Controller
 
     public function index()
     {
+        $this->authorize('manage' , Category::class);
         $categories = Category::OrderBy('id', 'DESC')->paginate(5);
         $pagetitle = 'دسته بندی ها';
         $breadcrumb = 'دسته بندی ها';
@@ -22,24 +23,9 @@ class CategoryController extends Controller
 
 
 
-
-
-
-    // public function create()
-    // {
-    //     $pagetitle = 'ایجاد دسته بندی';
-    //     $breadcrumb = 'دسته بندی ها / ایجاد دسته بندی';
-    //     $categories = Category::all();
-    //     return view('Category::create', compact('pagetitle', 'categories', 'breadcrumb'));
-    // }
-
-
-
-
-
-
     public function store(CategoryRequest $request)
     {
+        $this->authorize('manage' , Category::class);
 
         $categories = new Category();
 
@@ -62,11 +48,11 @@ class CategoryController extends Controller
 
 
 
-    public function show($id)
-    {
-        //
+    // public function show($id)
+    // {
+    //     //
 
-    }
+    // }
 
 
 
@@ -76,6 +62,7 @@ class CategoryController extends Controller
 
     public function edit(Category $category)
     {
+        $this->authorize('manage' , Category::class);
         $categories = Category::where('id', '!=', $category->id)->get();
         $breadcrumb = 'دسته بندی ها / به روز رسانی دسته بندی';
         $pagetitle = 'ویرایش دسته بندی';
@@ -89,6 +76,7 @@ class CategoryController extends Controller
 
     public function update(CategoryRequest $request, Category $category)
     {
+        $this->authorize('manage' , Category::class);
 
         try {
             $category->update($request->all());
@@ -112,6 +100,7 @@ class CategoryController extends Controller
 
     public function destroy(Category $category)
     {
+        $this->authorize('manage' , Category::class);
         try {
 
             $category->delete();

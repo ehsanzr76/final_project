@@ -1,12 +1,10 @@
 @extends('panel::layouts.blank')
-
-
 @section('content')
 <div class="col-sm-12">
     @include('user::front.layouts.message')
     <div class="card">
         <div class="card-header">
-            <h5>لیست کسب وکار ها</h5>
+            <h5>لیست کسب و کار ها</h5>
         </div>
         <div class="table-responsive">
 
@@ -49,21 +47,21 @@
 
                     <tr>
                         <th scope="row">{{$item->id}}</th>
-                        <td width="80"><img src="{{$item->thumb}}" alt="" width="80"></td>
+                        <td width="80"><img src="{{$item->image->thumb}}" alt="" width="80"></td>
                         <td>{{$item->title}}</td>
                         <td>{{$item->category->title}}</td>
                         <td>{{$item->BusinessNumber}}</td>
                         <td>{{$item->mobile}}</td>
-                        <td>{!! mb_substr($item->address,0,50) !!}</td>
+                        <td>{!! mb_substr($item->address,0,20) !!}</td>
                         <td>{!! jdate($item->created_at)->format('%Y-%m-%d') !!}</td>
                         <td>{!!$status!!}</td>
 
                         <td>
                             <a href=""><i data-feather="eye"></i></a>
-                            <a href="{{route('categories.edit' , $item->id)}}" style="color: rgb(97, 211, 97)"><i
+                            <a href="{{route('business.edit' , $item->id)}}" style="color: rgb(97, 211, 97)"><i
                                     data-feather="edit"></i></a>
-                            <a href="{{route('categories.delete' , $item->id)}}"
-                                onclick="return confirm('آیا دسته مورد نظر حذف شود؟')" style="color: red"><i
+                            <a href="{{route('business.delete' , $item->id)}}"
+                                onclick="return confirm('آیا کسب و کار مورد نظر حذف شود؟')" style="color: red"><i
                                     data-feather="trash-2"></i></a>
 
                         </td>

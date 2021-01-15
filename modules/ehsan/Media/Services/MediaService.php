@@ -4,6 +4,7 @@
 namespace ehsan\Media\Services;
 
 use ehsan\Media\models\Media;
+use ehsan\Media\Services\ImageFileService;
 
 class MediaService
 {
@@ -32,5 +33,22 @@ class MediaService
                 VideoFileService::Upload($file);
                 break;
         };
+    }
+
+
+
+
+    public static function delete($media)
+    {
+
+        switch($media->type)
+        {
+            case 'image':
+                ImageFileService::delete($media);
+
+                break;
+
+        }
+
     }
 }

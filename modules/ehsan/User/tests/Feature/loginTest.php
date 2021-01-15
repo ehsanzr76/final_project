@@ -5,6 +5,7 @@ namespace ehsan\User\tests\Feature;
 use ehsan\User\models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Biscolab\ReCaptcha\Facades\ReCaptcha;
 use Tests\TestCase;
 
 class loginTest extends TestCase
@@ -27,6 +28,7 @@ class loginTest extends TestCase
 
     public function test_user_can_login_byEmail_And_Mobile()
     {
+        $this->recaptcha();
         $user = User::create([
 
             'name' => $this->faker->name,
@@ -44,5 +46,14 @@ class loginTest extends TestCase
         ]);
 
         $this->assertAuthenticated();
+    }
+
+
+
+    public function recaptcha()
+    {
+        return ReCaptcha::shouldReceive('validate')
+            ->once()
+            ->andReturnTrue();
     }
 }

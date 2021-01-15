@@ -26,7 +26,7 @@ class CreateBusinessesTable extends Migration
             $table->bigInteger('category_id')->unsigned();
 
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('CASCADE');
-            $table->foreign('media_id')->references('id')->on('media')->onDelete('CASCADE');
+            $table->foreign('media_id')->references('id')->on('media')->onDelete('SET NULL');
             $table->timestamps();
         });
     }

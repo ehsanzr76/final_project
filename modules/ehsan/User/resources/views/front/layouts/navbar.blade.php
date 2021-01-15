@@ -22,9 +22,9 @@
                     <span>یا</span>
                     <a href="{{route('login')}}">ورود</a>
                     <form action="{{route('logout')}}" method="POST">
-                    @csrf
-                    <button class="btn btn-primary">خروج</button></form>
-                   
+                        @csrf
+                        <button class="btn btn-primary">خروج</button></form>
+
                 </div>
 
             </div>
@@ -32,7 +32,7 @@
 
         </div>
     </div>
-  
+
     <div class="shop_middle_logo_area">
         <div class="container-fluid">
             <div class="row">
@@ -59,7 +59,7 @@
                             </div>
                         </div>
                     </div>
-
+  
 
                     <div class="col-lg-4">
                         <div class="shop_cart" style="float: left">

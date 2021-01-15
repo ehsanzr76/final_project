@@ -4,7 +4,7 @@
   @include('user::front.layouts.message')
   <div class="card">
     <div class="card-header">
-      <h5>جدول دسته بندی ها</h5>
+      <h5>لیست دسته بندی ها</h5>
     </div>
     <div class="table-responsive">
 

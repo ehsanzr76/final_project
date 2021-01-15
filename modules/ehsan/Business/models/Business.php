@@ -20,10 +20,7 @@ class Business extends Model
     }
 
     
-    public function getThumbAttribute()
-    {
-        return '/storage/' . $this->image->files[300];
-    }
+    
 
 
 

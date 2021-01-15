@@ -72,13 +72,6 @@
                                         </div>
                                     </div> --}}
 
-                                    @error('endDate')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-
-
 
 
                                     <label for="exampleInputPassword1">انتخاب دسته بندی *</label>

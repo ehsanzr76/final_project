@@ -76,8 +76,8 @@
 
 
 
-                            <label class="d-block" for="chk-ani"> <b>انتخاب مجوز</b> <br><br>
-                                @foreach($permissions as $permission)
+                            <label class="d-block" for="chk-ani"> <b>انتخاب مجوز</b><br>
+                                @foreach($permissions as $permission)<hr>
                                 <input class="checkbox_animated  @error('permissions') is-invalid @enderror"
                                     id="chk-ani" type="checkbox" data-original-title="" title=""
                                     name="permissions[{{$permission->name}}]" value="{{$permission->name}}">

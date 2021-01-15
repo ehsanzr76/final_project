@@ -5,7 +5,7 @@ namespace ehsan\Business\Http\Requests;
 use ehsan\User\Rules\ValidMobile;
 use Illuminate\Foundation\Http\FormRequest;
 
-class BusinessRequest extends FormRequest
+class BusinessStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -14,7 +14,7 @@ class BusinessRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return auth()->check()==true;
     }
 
     /**

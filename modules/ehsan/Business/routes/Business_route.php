@@ -9,6 +9,10 @@ Route::group(['namespace' => 'ehsan\Business\Http\Controllers' , 'prefix' => '/D
 
     route::get('/Business' , 'BusinessController@index')->name('Business');
     route::get('/Business/status/{business}', 'BusinessController@updatestatus')->name('business.status');
+    route::get('/Business/edit/{business}', 'BusinessController@edit')->name('business.edit');
+    route::put('/Business/update/{business}', 'BusinessController@update')->name('business.update');
+    route::get('/Business/delete/{business}', 'BusinessController@destroy')->name('business.delete');
+
     
 });
 
