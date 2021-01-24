@@ -27,11 +27,11 @@
             <td>{{$item->slug}}</td>
             <td>{{$item->parent}}</td>
             <td>
-              <a href=""><i data-feather="eye"></i></a>
-              <a href="{{route('categories.edit' , $item->id)}}" style="color: rgb(97, 211, 97)"><i
+              <a href="" title="مشاهده"><i data-feather="eye"></i></a>
+              <a href="{{route('categories.edit' , $item->id)}}" style="color: rgb(97, 211, 97)" title="ویرایش"><i
                   data-feather="edit"></i></a>
               <a href="{{route('categories.delete' , $item->id)}}"
-                onclick="return confirm('آیا دسته مورد نظر حذف شود؟')" style="color: red"><i
+                onclick="return confirm('آیا دسته مورد نظر حذف شود؟')" style="color: red" title="حذف"><i
                   data-feather="trash-2"></i></a>
 
             </td>

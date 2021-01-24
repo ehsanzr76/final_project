@@ -1,8 +1,8 @@
 <?php
 
 use ehsan\Permission\Providers\PermissionServiceProvider;
-use ehsan\RolePermission\models;
 use ehsan\RolePermission\models\Permission as ModelsPermission;
+use ehsan\RolePermission\models\Role;
 use ehsan\User\Mail\VerifyCodeMail;
 use ehsan\User\models\User;
 use Illuminate\Support\Facades\Auth;
@@ -33,5 +33,5 @@ Route::get('/test', function () {
 
 
 Route::get('/test1', function () {
-    auth()->user()->givePermissionTo(ModelsPermission::PERMISSION_SUPER_ADMIN);
+  var_dump(auth()->user()->givePermissionTo(ModelsPermission::PERMISSION_SUPER_ADMIN));  
 });

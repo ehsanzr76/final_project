@@ -1,17 +1,21 @@
 <footer class="footer">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-6 footer-copyright">
-          <p class="mb-0">کپی رایت 2018 © اندلس همه حقوق محفوظ است.</p>
-        </div>
-        <div class="col-md-6">
-          <p class="pull-right mb-0">دست ساز و ساخته شده با<i class="fa fa-heart"></i></p>
-        </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 footer-copyright">
+        <p class="mb-0">کپی رایت 2018 © اندلس همه حقوق محفوظ است.</p>
+      </div>
+      <div class="col-md-6">
+        <p class="pull-right mb-0">دست ساز و ساخته شده با<i class="fa fa-heart"></i></p>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
 </div>
 </div>
+
+
+<!-- jQuery Modal -->
+
 <!-- latest jquery-->
 <script src="{{url('/assets/js/jquery-3.2.1.min.js')}}"></script>
 <!-- Bootstrap js-->
@@ -48,6 +52,14 @@
 <!-- Theme js-->
 <script src="{{url('/assets/js/script.js')}}"></script>
 <script src="{{url('/assets/js/theme-customizer/customizer.js')}}"></script>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+
+
 <!-- Plugin used-->
 </body>
+
 </html>

@@ -7,12 +7,20 @@
       <div><img class="img-60 rounded-circle" src="../assets/images/user/1.jpg" alt="#">
         <div class="profile-edit"><a href="edit-profile.html" target="_blank"><i data-feather="edit"></i></a></div>
       </div>
-      <h6 class="mt-3 f-14">پارادایم</h6>
+      <h6 class="mt-3 f-14">احسان زارعی</h6>
       <p>مدیر کل</p>
     </div>
     <ul class="sidebar-menu">
       <li><a class="sidebar-header" href="{{route('Dashboard')}}"><i data-feather="home"></i><span>داشبورد</span><span
             class="badge badge-pill badge-primary">6</span></a></li>
+
+            
+      <li class="nav-item"><a class="sidebar-header" href="#"><i data-feather="users"></i><span>کاربران</span><i
+        class="fa fa-angle-right pull-right"></i></a>
+    <ul class="sidebar-submenu">
+      <li><a href="{{route('users')}}"><i class="fa fa-circle"></i>مشاهده کاربران</a></li>
+    </ul>
+  </li>
 
 
       <li class="nav-item"><a class="sidebar-header" href="#"><i data-feather="layers"></i><span>دسته بندی ها</span><i

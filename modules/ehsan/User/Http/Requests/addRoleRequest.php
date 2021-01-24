@@ -1,10 +1,10 @@
 <?php
 
-namespace ehsan\RolePermission\Http\requests;
+namespace ehsan\User\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class RolePermissionUpdateRequest extends FormRequest
+class addRoleRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class RolePermissionUpdateRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return auth()->check() == true;
     }
 
     /**
@@ -24,9 +24,8 @@ class RolePermissionUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            "id" =>"exists:roles,id",
-            "name" => "required|min:3" . request()->id,
-            "permissions" => "required|array|min:1"
+
+            'role' => ['required' , 'exists:roles,id']
 
         ];
     }

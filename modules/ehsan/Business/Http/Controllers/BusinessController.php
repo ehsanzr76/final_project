@@ -112,6 +112,7 @@ class BusinessController extends Controller
 
 
         try {
+            
         $business->save();
         } catch (Exception $exc) {
             switch ($exc->getCode()) {

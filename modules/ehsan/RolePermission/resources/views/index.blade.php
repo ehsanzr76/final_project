@@ -27,17 +27,18 @@
                                 <td>
                                     <ul>
                                         @foreach ($role->permissions as $permission)
-                                        <li>@lang($permission->name)</li>
+                                        <span class="badge badge-dark" style="background-color: rgb(64, 166, 197);font-size:13px">@lang($permission->name)</span>
+                                     
                                         @endforeach
                                     </ul>
                                 </td>
 
                                 <td>
-                                    <a href=""><i data-feather="eye"></i></a>
+                                    <a href="" title="مشاهده"><i data-feather="eye"></i></a>
                                     <a href="{{route('RolePermissions.edit' , $role->id)}}"
-                                        style="color: rgb(92, 185, 92)"><i data-feather="edit"></i></a>
+                                        style="color: rgb(92, 185, 92)" title="ویرایش"><i data-feather="edit"></i></a>
                                     <a href="{{route('RolePermissions.delete' , $role->id)}}"
-                                        onclick="return confirm('آیا نقش مورد نظر حذف شود؟')" style="color: red"><i
+                                        onclick="return confirm('آیا نقش مورد نظر حذف شود؟')" style="color: red" title="حذف"><i
                                             data-feather="trash-2"></i></a>
 
 

@@ -57,11 +57,11 @@
                                         <span class="checkmark"></span>
                                     </label>
 
-                                    
+{{--                                     
                                     <div class="form-group">
                                         <label for="recaptcha">تصویر امنیتی</label>
                                         {!! htmlFormSnippet() !!}
-                                    </div>
+                                    </div> --}}
 
 
 

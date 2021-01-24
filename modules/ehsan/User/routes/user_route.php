@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['namespace' => 'ehsan\User\Http\Controllers' , 'middleware' => 'web'], function ($router) {
 
+
+    ////////////frontend
+
     // verify_email
     Route::get('/email/verify' , 'Auth\VerificationController@show')->name('verification.notice');
     Route::post('/email/verify' , 'Auth\VerificationController@verify')->name('verification.verify');
@@ -32,10 +35,7 @@ Route::group(['namespace' => 'ehsan\User\Http\Controllers' , 'middleware' => 'we
 
 });
 
-
-
-
-
+////homepage
 
 Route::group(['namespace' => 'ehsan\User\Http\Controllers' , 'middleware' => 'web'], function ($router) {
     Route::get('/home' , 'HomeController@index')->name('homepage');
@@ -44,5 +44,27 @@ Route::group(['namespace' => 'ehsan\User\Http\Controllers' , 'middleware' => 'we
 
 });
 
+
+
+
+
+
+
+
+////////////backend
+
+Route::group(['namespace' => 'ehsan\User\Http\Controllers\back' , 'prefix' => '/Dashboard' , 'middleware' => ['web' , 'auth' , 'verified']], function ($router) {
+
+    Route::get('/users' , 'UserController@index')->name('users');
+    Route::post('users/{user}/add/role', 'UserController@addRole')->name('users.addRole');
+    Route::get('users/{user}/remove/role/{role}', 'UserController@removeRole')->name('users.removeRole');
+    Route::get('users/edit/{user}', 'UserController@edit')->name('users.edit');
+    Route::put('users/update/{user}', 'UserController@update')->name('users.update');
+    route::get('/users/delete/{user}', 'UserController@destroy')->name('users.delete');
+    Route::get('users/VerifyUser/{user}', 'UserController@VerifyUser')->name('users.VerifyUser');
+
+    
+    });
+    
 
 

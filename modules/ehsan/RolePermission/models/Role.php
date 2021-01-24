@@ -8,14 +8,14 @@ use Spatie\Permission\Models\Role as ModelsRole;
 class Role extends ModelsRole
 {
 
-    const ROLE_SELLER= 'seller';
-    // const SUPER_ADMIN= 'super admin';
+    // const ROLE_SELLER= 'seller';
+    const Role_SUPER_ADMIN= 'super admin';
 
   
     static $roles=[
-        self::ROLE_SELLER => [
+        self::Role_SUPER_ADMIN => [
 
-            Permission::PERMISSION_MANAGE_CATEGORIES
+            Permission::PERMISSION_SUPER_ADMIN
 
         ]
 
