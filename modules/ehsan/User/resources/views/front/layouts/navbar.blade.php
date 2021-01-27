@@ -18,13 +18,18 @@
                 </div>
 
                 <div class="shop_sing_item">
-                    <a href="{{route('register')}}"><img src="img/icon/user-icon.png" alt="">عضویت</a>
-                    <span>یا</span>
-                    <a href="{{route('login')}}">ورود</a>
+                    @auth
                     <form action="{{route('logout')}}" method="POST">
                         @csrf
                         <button class="btn btn-primary">خروج</button></form>
 
+                    @else
+                    <a href="{{route('register')}}"><img src="img/icon/user-icon.png" alt="">عضویت</a>
+                    <span>یا</span>
+                    <a href="{{route('login')}}">ورود</a>
+
+
+                    @endauth
                 </div>
 
             </div>
@@ -59,7 +64,7 @@
                             </div>
                         </div>
                     </div>
-  
+
 
                     <div class="col-lg-4">
                         <div class="shop_cart" style="float: left">

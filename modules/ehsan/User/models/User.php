@@ -39,12 +39,12 @@ class User extends Authenticatable implements MustVerifyEmail
         'name', 'email', 'password', 'mobile' , 'media_id' , 'bio'
     ];
 
-    protected $attributes = [
+    // protected $attributes = [
 
-        'media_id' => 1,
+    //     'media_id' => 0
 
 
-    ];
+    // ];
 
     /**
      * The attributes that should be hidden for arrays.

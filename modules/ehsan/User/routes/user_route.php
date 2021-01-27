@@ -62,6 +62,10 @@ Route::group(['namespace' => 'ehsan\User\Http\Controllers\back' , 'prefix' => '/
     Route::put('users/update/{user}', 'UserController@update')->name('users.update');
     route::get('/users/delete/{user}', 'UserController@destroy')->name('users.delete');
     Route::get('users/VerifyUser/{user}', 'UserController@VerifyUser')->name('users.VerifyUser');
+    Route::get('users/EditProfile', 'UserController@EditProfile')->name('users.EditProfile');
+    Route::post('users/UpdateProfile', 'UserController@UpdateProfile')->name('users.UpdateProfile');
+
+
 
     
     });

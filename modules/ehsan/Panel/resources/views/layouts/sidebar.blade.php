@@ -1,14 +1,16 @@
 <div class="page-sidebar">
   <div class="main-header-left d-none d-lg-block">
-    <div class="logo-wrapper"><a href="index.html"><img src="../assets/images/endless-logo.png" alt=""></a></div>
+    <div class="logo-wrapper"><i class="icofont icofont-chart-histogram" style="font-size: 25px;color:rgb(190, 166, 166)"> Nitro Business </i></div>
   </div>
   <div class="sidebar custom-scrollbar">
     <div class="sidebar-user text-center">
-      <div><img class="img-60 rounded-circle" src="../assets/images/user/1.jpg" alt="#">
-        <div class="profile-edit"><a href="edit-profile.html" target="_blank"><i data-feather="edit"></i></a></div>
+      <div>
+        <img class="img-60 rounded-circle" src="{{auth()->user()->image->thumb ?? ''}}" width="60" height="60" alt="#">
+        <div class="profile-edit"><a href="{{route('users.EditProfile')}}" target="_blank"><i data-feather="edit"></i></a></div>
       </div>
-      <h6 class="mt-3 f-14">احسان زارعی</h6>
-      <p>مدیر کل</p>
+
+      <h6 class="mt-3 f-14"><b>کاربر:</b>{{auth()->user()->name}}</h6> 
+
     </div>
     <ul class="sidebar-menu">
       <li><a class="sidebar-header" href="{{route('Dashboard')}}"><i data-feather="home"></i><span>داشبورد</span><span

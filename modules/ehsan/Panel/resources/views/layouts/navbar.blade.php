@@ -75,11 +75,11 @@
         </li>
         <li class="onhover-dropdown">
           <div class="media align-items-center"><img class="align-self-center pull-right img-50 rounded-circle"
-              src="{{url('../assets/images/dashboard/user.png')}}" alt="header-user">
+              src="{{auth()->user()->image->thumb ?? '' }}" width="50" height="50" alt="header-user">
             <div class="dotted-animation"><span class="animate-circle"></span><span class="main-circle"></span></div>
           </div>
           <ul class="profile-dropdown onhover-show-div p-20">
-            <li><a href="#"><i data-feather="user"></i>ویرایش پروفایل</a></li>
+            <li><a href="{{route('users.EditProfile')}}"><i data-feather="user"></i>ویرایش پروفایل</a></li>
             <li><a href="#"><i data-feather="mail"></i> صندوق ورودی</a></li>
             <li><a href="#"><i data-feather="lock"></i> قفل صفحه</a></li>
             <li><a href="#"><i data-feather="settings"></i> تنظیمات</a></li>

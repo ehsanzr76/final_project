@@ -19,7 +19,7 @@
                                 <br>
                                 @if (session('resent'))
                                 <div class="alert alert-success" role="alert">
-                                    {{ __('کد فعالسازی حساب کاربری به ایمیل شما ارسال شد.') }}
+                                    کد فعالسازی حساب کاربری به ایمیل {{auth()->user()->email}} ارسال شد.
                                 </div>
                                 @endif
 
@@ -29,7 +29,7 @@
                                 <form class="theme-form" method="POST" action="{{ route('verification.verify') }}">
                                     @csrf
                                     <div class="form-group">
-                                        <label class="col-form-label" style="color: rgb(136, 116, 116)">کد تایید را وارد
+                                        <label class="col-form-label" style="color: rgb(136, 116, 116)">کد تایید 6 رقمی را وارد
                                             کنید</label>
                                         <input id="username"
                                             class="form-control @error('verify_code') is-invalid @enderror" type="text"
@@ -48,7 +48,7 @@
                                     </div>
 
                                     <div class>
-                                        <button class="btn btn-primary" type="submit">تایید</button>
+                                        <button class="btn btn-primary" type="submit">فعالسازی</button>
                                     </div>
                                     <br>
                                     <div class>

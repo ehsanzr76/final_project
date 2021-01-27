@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use ehsan\Media\Services\MediaService;
 use ehsan\RolePermission\models\Role;
 use ehsan\User\Http\Requests\addRoleRequest;
+use ehsan\User\Http\Requests\UserUpdateProfileRequest;
 use ehsan\User\Http\Requests\UserUpdateRequest;
 use ehsan\User\models\User;
 use Exception;
@@ -121,6 +122,61 @@ class UserController extends Controller
     }
 
 
+    public function EditProfile()
+    {
+        $pagetitle = 'ویرایش پروفایل';
+        $breadcrumb = 'ویرایش پروفایل';
+        return view('user::back.EditProfile', compact('pagetitle', 'breadcrumb'));
+    }
+
+
+
+
+    public function UpdateProfile(UserUpdateProfileRequest $request)
+    {
+        if ($request->hasFile('image')) {
+            $media = MediaService::Upload($request->file('image'));
+            if (auth()->user()->image) {
+                auth()->user()->image->delete();
+
+            }
+            auth()->user()->media_id = $media->id;
+        }
+
+        auth()->user()->name = $request->name;
+
+        if (auth()->user()->email != $request->email) {
+
+            auth()->user()->email = $request->email;
+            auth()->user()->email_verified_at = null;
+        }
+
+        auth()->user()->mobile = $request->mobile;
+
+        if ($request->password) {
+            auth()->user()->password = bcrypt($request->password);
+        }
+
+        auth()->user()->bio = $request->bio;
+
+
+        try {
+            auth()->user()->save();
+        } catch (Exception $exc) {
+            switch ($exc->getCode()) {
+                case 23000:
+                    $msg = "خطایی رخ داده است";
+                    break;
+            }
+            return redirect(route('users.EditProfile'))->with('warning', $msg);
+        }
+
+        $msg = "پروفایل شما با موفقیت بروزرسانی شد.";
+        return redirect(route('users.EditProfile'))->with('success', $msg);
+    }
+
+
+
 
 
     public function destroy(User $user)
@@ -143,11 +199,4 @@ class UserController extends Controller
         $msg = 'کاربر با موفقیت حذف شد.';
         return redirect(route('users'))->with('success', $msg);
     }
-
-
-
-
-
-
-
 }

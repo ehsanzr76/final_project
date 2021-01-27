@@ -1,5 +1,6 @@
 <?php
 
+use ehsan\Media\models\Media;
 use ehsan\User\models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -7,6 +8,8 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateUsersTable extends Migration
 {
+
+
     /**
      * Run the migrations.
      *
@@ -14,6 +17,7 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
+  
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
@@ -26,9 +30,9 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->enum('status' , User::$statuses)->nullable()->default('active');
             $table->rememberToken();
+            $table->timestamps();
 
             $table->foreign('media_id')->references('id')->on('media')->onDelete('SET NULL');
-            $table->timestamps();
         });
     }
 
