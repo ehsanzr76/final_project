@@ -3,7 +3,7 @@
 
 
 <div class="col-sm-12">
-    @include('user::front.layouts.message')
+    @include('panel::layouts.message')
     <div class="card">
         <div class="card-header">
             <h5>لیست کاربران</h5>
@@ -100,7 +100,7 @@
                         </td>
                         <td>{{$user->ip}}</td>
                         <td>{!!$user->hasVerifiedEmail() ? "<span class='badge badge-dark' style='color:rgb(37, 223, 93)'>تایید شده</span>" : "<span class='badge badge-dark' style='color:rgb(255, 136, 0)'>تایید نشده</span>"!!} </td>
-                        <td>{!! jdate($user->created_at)->format('%Y/%m/%d') !!}</td>
+                        <td>{!! jdate($user->created_at)->format('%Y-%m-%d') !!}</td>
 
                         <td>
                             </span>

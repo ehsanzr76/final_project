@@ -3,6 +3,7 @@ namespace ehsan\User\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use ehsan\Category\models\Category;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Http\Request;
 
@@ -31,8 +32,9 @@ class ResetPasswordController extends Controller
 
     public function showResetForm(Request $request, $token = null)
     {
+        $categories = Category::where('parent_id', null)->with('SubCategories')->get();
         $pagetitle = 'بروز رسانی رمز عبور';
-        return view('user::auth.passwords.reset' , ['pagetitle'=>$pagetitle])->with(
+        return view('user::auth.passwords.reset' , ['pagetitle'=>$pagetitle , 'categories' => $categories])->with(
             ['token' => $token, 'email' => $request->email]
         );
     }

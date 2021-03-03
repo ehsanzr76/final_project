@@ -35,17 +35,6 @@ Route::group(['namespace' => 'ehsan\User\Http\Controllers' , 'middleware' => 'we
 
 });
 
-////homepage
-
-Route::group(['namespace' => 'ehsan\User\Http\Controllers' , 'middleware' => 'web'], function ($router) {
-    Route::get('/home' , 'HomeController@index')->name('homepage');
-    Route::get('/', 'HomeController@index')->name('home');
-
-
-});
-
-
-
 
 
 

@@ -1,7 +1,7 @@
 @extends('panel::layouts.blank')
 @section('content')
 <div class="col-sm-12">
-    @include('user::front.layouts.message')
+    @include('panel::layouts.message')
     <div class="card">
         <div class="card-header">
             <h5>لیست کسب و کار ها</h5>
@@ -47,7 +47,7 @@
 
                     <tr>
                         <th scope="row">{{$item->id}}</th>
-                        <td width="80"><img src="{{$item->image->thumb}}" alt="" width="80"></td>
+                        <td width="80"><img src="{{$item->image->thumb}}" alt="" style="width:80px;height:80px"></td>
                         <td>{{$item->title}}</td>
                         <td>{{$item->category->title}}</td>
                         <td>{{$item->BusinessNumber}}</td>

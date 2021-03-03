@@ -7,7 +7,7 @@
 
 
 <div class="col-lg-4">
-    @include('user::front.layouts.message')
+    @include('panel::layouts.message')
 </div>
 <div class="container-fluid">
     <div class="row">

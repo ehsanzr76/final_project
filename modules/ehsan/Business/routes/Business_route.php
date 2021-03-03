@@ -25,7 +25,5 @@ Route::group(['namespace' => 'ehsan\Business\Http\Controllers' , 'middleware' =>
     route::get('/Business/create' , 'BusinessController@CreateFrontBusiness')->name('business.create');
     route::post('/Business/store' , 'BusinessController@StoreFrontBusiness')->name('business.store');
 
-
-    
 });
 

@@ -5,7 +5,7 @@
 <div class="col-sm-8">
     <div class="card">
         <div class="card-header">
-            @include('user::front.layouts.message')
+            @include('panel::layouts.message')
             <h5>ویرایش کسب وکار ها</h5>
             <div class="card-body">
                 <form class="theme-form" method="POST" action="{{route('business.update' , $business->id)}}"  enctype="multipart/form-data">

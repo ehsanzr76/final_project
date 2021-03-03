@@ -3,6 +3,7 @@
 namespace ehsan\User\models;
 
 use App\Notifications\VerifyEmail;
+use ehsan\Business\models\Business;
 use ehsan\Media\models\Media;
 use ehsan\Permission\Services\Traits\HasPermission;
 use ehsan\User\Notifications\VerifyMail;
@@ -74,5 +75,11 @@ class User extends Authenticatable implements MustVerifyEmail
     public function image()
     {
         return $this->belongsTo(Media::class, 'media_id');
+    }
+
+
+    public function businesses()
+    {
+        return $this->hasMany(Business::class);
     }
 }

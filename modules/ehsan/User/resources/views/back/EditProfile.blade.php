@@ -5,7 +5,7 @@
 <div class="col-sm-12">
     <div class="card">
         <div class="card-header">
-            @include('user::front.layouts.message')
+            @include('panel::layouts.message')
             <h5>ویرایش پروفایل</h5>
             <div class="card-body">
                 <form class="theme-form" method="POST" action="{{route('users.UpdateProfile')}}"

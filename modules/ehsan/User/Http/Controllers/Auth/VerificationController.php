@@ -4,6 +4,7 @@ namespace ehsan\User\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use ehsan\Category\models\Category;
 use ehsan\User\Http\Requests\VerifyCodeRequest;
 use ehsan\User\services\VerifyCodeServices;
 use Illuminate\Foundation\Auth\VerifiesEmails;
@@ -47,10 +48,11 @@ class VerificationController extends Controller
 
     public function show(Request $request)
     {
+        $categories = Category::where('parent_id', null)->with('SubCategories')->get();
         $pagetitle = 'تایید حساب کاربری';
         return $request->user()->hasVerifiedEmail()
             ? redirect($this->redirectPath())
-            : view('user::auth.verify' , compact('pagetitle'));
+            : view('user::auth.verify' , compact('pagetitle' , 'categories'));
     }
 
 

@@ -1,80 +1,59 @@
-@include('user::front.layouts.header')
-@include('user::front.layouts.navbar')
+@extends('front::layouts.blank')
+@section('content')
 
 
-<body main-theme-layout="rtl">
-    <!-- Loader starts-->
-    <!-- Loader ends-->
-    <!-- page-wrapper Start-->
-    @include('user::front.layouts.message')
-    <div class="page-wrapper">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="auth-bg">
-                        <div class="authentication-box">
-                            <div class="card mt-4 p-4" style="text-align: center">
+<div class="col-lg-12">
+    @include('panel::layouts.message')
+    <div class="card mt-4 p-4" style="text-align: center">
 
-                                <h3 class="text-center" style="color: rgb(136, 116, 116)">تایید حساب</h3>
-                                <br>
-                                @if (session('resent'))
-                                <div class="alert alert-success" role="alert">
-                                    کد فعالسازی حساب کاربری به ایمیل {{auth()->user()->email}} ارسال شد.
-                                </div>
-                                @endif
-
-                                {{ __('ایمیل خود را جهت فعالسازی حساب کاربری چک کنید. ') }}
-
-                                <br><br>
-                                <form class="theme-form" method="POST" action="{{ route('verification.verify') }}">
-                                    @csrf
-                                    <div class="form-group">
-                                        <label class="col-form-label" style="color: rgb(136, 116, 116)">کد تایید 6 رقمی را وارد
-                                            کنید</label>
-                                        <input id="username"
-                                            class="form-control @error('verify_code') is-invalid @enderror" type="text"
-                                            name="verify_code">
-
-                                        @error('verify_code')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
-                                    </div>
-
-                                    <div class="form-group" style="text-align: right">
-                                        <label for="recaptcha">تصویر امنیتی</label>
-                                        {!! htmlFormSnippet() !!}
-                                    </div>
-
-                                    <div class>
-                                        <button class="btn btn-primary" type="submit">فعالسازی</button>
-                                    </div>
-                                    <br>
-                                    <div class>
-                                        <a href="#"
-                                            onclick="event.preventDefault();document.getElementById('resend-code').submit()">ارسال
-                                            مجدد کد فعالسازی</a>
-                                    </div>
-                                </form>
-
-                                <form id="resend-code" action="{{route('verification.resend')}}" method="POST">
-                                    @csrf
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col-lg-4">
-                    <section class="shop_slider_area">
-                        @include('user::front.layouts.category')
-                    </section>
-                </div>
-            </div>
+        <h3 class="text-center" style="color: rgb(136, 116, 116)">تایید حساب</h3>
+        <br>
+        @if (session('resent'))
+        <div class="alert alert-success" role="alert">
+            کد فعالسازی حساب کاربری به ایمیل {{auth()->user()->email}} ارسال شد.
         </div>
+        @endif
+
+        {{ __('ایمیل خود را جهت فعالسازی حساب کاربری چک کنید. ') }}
+
+        <br><br>
+        <form action="{{route('verification.verify')}}" method="post" class="sky-form boxed">
+            @csrf
+            <fieldset class="nomargin">
+
+                <label class="label margin-top-20">کد تایید 6 رقمی را وارد
+                    کنید</label>
+                <label class="input">
+                    <input id="username" class="form-control @error('verify_code') is-invalid @enderror" type="text"
+                        name="verify_code">
+                </label>
+                @error('verify_code')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+
+
+                    <label for="recaptcha">تصویر امنیتی</label>
+                    {!! htmlFormSnippet() !!}
+
+            </fieldset>
+
+            <footer class="celarfix">
+                <button type="submit" class="btn btn-success noradius pull-left"><i class="fa fa-check"></i>
+                    فعالسازی</button>
+                <div class="login-forgot-password pull-right">
+                    <a href="#" onclick="event.preventDefault();document.getElementById('resend-code').submit()">ارسال
+                        مجدد کد فعالسازی</a>
+                </div>
+            </footer>
+        </form>
+
+        <form id="resend-code" action="{{route('verification.resend')}}" method="POST">
+            @csrf
+        </form>
     </div>
+    @endsection
 
     {{-- @include('front.layouts.footer') --}}
     <!-- page-wrapper Ends-->

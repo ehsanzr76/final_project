@@ -26,7 +26,7 @@ class CreateUsersTable extends Migration
             $table->string('ip')->nullable();
             $table->bigInteger('media_id')->unsigned()->nullable();
             $table->text('bio')->nullable();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->timestamp('email_verified_at');
             $table->string('password');
             $table->enum('status' , User::$statuses)->nullable()->default('active');
             $table->rememberToken();

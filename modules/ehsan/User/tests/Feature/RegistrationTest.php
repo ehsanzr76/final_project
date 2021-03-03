@@ -32,9 +32,7 @@ class RegistrationTest extends TestCase
     public function test_user_can_register()
     {
         $this->recaptcha();
-
         $response = $this->register_user();
-
         $response->assertRedirect(route('home'));
         $this->assertCount(1, User::all());
     }
@@ -45,7 +43,6 @@ class RegistrationTest extends TestCase
     public function test_user_have_to_verify_account()
     {
         $this->recaptcha();
-
         $this->register_user();
         $response = $this->get(route('home'));
         $response->assertRedirect(route('verification.notice'));
@@ -87,16 +84,16 @@ class RegistrationTest extends TestCase
 
 
 
-    // public function test_user_verified_can_see_homepage()
-    // {
+    public function test_user_verified_can_see_homepage()
+    {
 
-    //     $this->register_user();
-    //     $this->assertAuthenticated();
-    //     auth()->user()->markEmailAsVerified();
-    //     $this->recaptcha();
-    //     $response = $this->get(route('home'));
-    //     $response->assertOk();
-    // }
+        $this->register_user();
+        $this->assertAuthenticated();
+        auth()->user()->markEmailAsVerified();
+        $this->recaptcha();
+        $response = $this->get(route('home'));
+        $response->assertOk();
+    }
 
 
 

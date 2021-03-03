@@ -3,7 +3,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-8">
-            @include('user::front.layouts.message')
+            @include('panel::layouts.message')
             <div class="card">
                 <div class="card-header">
                     <h5>نقش های کاربری</h5>

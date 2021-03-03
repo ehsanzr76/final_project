@@ -4,6 +4,7 @@ namespace ehsan\User\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use ehsan\Category\models\Category;
 use ehsan\User\Rules\ValidMobile;
 use ehsan\User\Rules\ValidPassword;
 use ehsan\User\models\User;
@@ -32,7 +33,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/email/verify';
 
     /**
      * Create a new controller instance.
@@ -79,8 +80,9 @@ class RegisterController extends Controller
 
     public function showRegistrationForm()
     {
+        $categories = Category::where('parent_id', null)->with('SubCategories')->get();
         $pagetitle = 'صفحه ثبت نام';
-        return view('user::auth.register', ['pagetitle' => $pagetitle]);
+        return view('user::auth.register', ['pagetitle' => $pagetitle , 'categories' => $categories]);
     }
 
     // public function register(Request $request)

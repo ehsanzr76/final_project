@@ -4,6 +4,7 @@ namespace ehsan\User\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use ehsan\Category\models\Category;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
@@ -41,8 +42,9 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
+        $categories = Category::where('parent_id', null)->with('SubCategories')->get();
         $pagetitle = 'صفحه ورود';
-        return view('user::auth.login', ['pagetitle' => $pagetitle]);
+        return view('user::auth.login', ['pagetitle' => $pagetitle , 'categories' => $categories]);
     }
 
     public function credentials(Request $request)

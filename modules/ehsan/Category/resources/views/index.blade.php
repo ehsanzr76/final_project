@@ -1,7 +1,7 @@
 @extends('panel::layouts.blank')
 @section('content')
 <div class="col-sm-8">
-  @include('user::front.layouts.message')
+  @include('panel::layouts.message')
   <div class="card">
     <div class="card-header">
       <h5>لیست دسته بندی ها</h5>

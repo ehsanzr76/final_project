@@ -26,36 +26,34 @@ class BusinessController extends Controller
 
     public function index()
     {
-        $this->authorize('manage' , Business::class);
+        $this->authorize('manage', Business::class);
         $pagetitle = 'مشاهده کسب و کار ها';
         $breadcrumb = 'مشاهده کسب و کار ها';
-        $business = Business::OrderBy('id', 'DESC')->paginate(8);
+        $business = Business::OrderBy('id', 'DESC')->paginate(6);
         return view('Business::index', compact('pagetitle', 'breadcrumb', 'business'));
     }
 
 
     public function edit($id)
     {
-        $this->authorize('manage' , Business::class);
+        $this->authorize('manage', Business::class);
         $category = Category::all();
         $business = Business::findOrfail($id);
         $pagetitle = 'ویرایش کسب و کار ها';
         $breadcrumb = 'کسب و کار ها   / ویرایش کسب و کارها';
-        return view('Business::edit', compact('pagetitle', 'breadcrumb', 'business'  , 'category'));
+        return view('Business::edit', compact('pagetitle', 'breadcrumb', 'business', 'category'));
     }
 
 
 
-    public function update(BusinessUpdateRequest $request , Business $business)
+    public function update(BusinessUpdateRequest $request, Business $business)
     {
-        $this->authorize('manage' , Business::class);
+        $this->authorize('manage', Business::class);
 
-        if($request->hasFile('image'))
-        {
-            $request->request->add(['media_id' =>MediaService::Upload($request->file('image'))->id]);
+        if ($request->hasFile('image')) {
+            $request->request->add(['media_id' => MediaService::Upload($request->file('image'))->id]);
             $business->image->delete();
-        }
-        else{
+        } else {
             $request->request->add(['media_id' => $business->media_id]);
         }
 
@@ -87,9 +85,10 @@ class BusinessController extends Controller
 
     public function CreateFrontBusiness()
     {
+        $categories = Category::where('parent_id', null)->with('SubCategories')->get();
         $category = Category::all();
         $pagetitle = 'ثبت کسب و کار جدید';
-        return view('user::front.CreateBusiness', compact('pagetitle', 'category'));
+        return view('user::front.CreateBusiness', compact('pagetitle', 'category', 'categories'));
     }
 
 
@@ -112,8 +111,8 @@ class BusinessController extends Controller
 
 
         try {
-            
-        $business->save();
+
+            $business->save();
         } catch (Exception $exc) {
             switch ($exc->getCode()) {
                 case 23000:
@@ -132,9 +131,12 @@ class BusinessController extends Controller
 
 
 
+
+
+
     public function destroy(Business $business)
     {
-        $this->authorize('manage' , Business::class);
+        $this->authorize('manage', Business::class);
         try {
 
             if ($business->image) {
@@ -160,7 +162,7 @@ class BusinessController extends Controller
 
     public function updatestatus(Business $business)
     {
-        $this->authorize('manage' , Business::class);
+        $this->authorize('manage', Business::class);
         if ($business->status == 1) {
             $business->status = 0;
         } else {
